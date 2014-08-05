@@ -7,13 +7,21 @@
 //
 
 #import "SQLAppDelegate.h"
+#import "SQLMainViewController.h"
 
 @implementation SQLAppDelegate
+
+@synthesize nav;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    SQLMainViewController *sqlMainView = [[SQLMainViewController alloc] init];
+    nav = [[UINavigationController alloc] initWithRootViewController:sqlMainView];
+    
+    self.window.rootViewController = nav;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

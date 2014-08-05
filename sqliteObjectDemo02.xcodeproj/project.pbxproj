@@ -19,6 +19,12 @@
 		CD8FA677198B21DB0094B2F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8FA65F198B21DB0094B2F0 /* UIKit.framework */; };
 		CD8FA67F198B21DB0094B2F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD8FA67D198B21DB0094B2F0 /* InfoPlist.strings */; };
 		CD8FA681198B21DB0094B2F0 /* sqliteObjectDemo02Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA680198B21DB0094B2F0 /* sqliteObjectDemo02Tests.m */; };
+		CD8FA68D198B22040094B2F0 /* SQLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA68B198B22040094B2F0 /* SQLMainViewController.m */; };
+		CD8FA68E198B22040094B2F0 /* SQLMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8FA68C198B22040094B2F0 /* SQLMainViewController.xib */; };
+		CD8FA692198B22190094B2F0 /* SQLDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA690198B22190094B2F0 /* SQLDetailViewController.m */; };
+		CD8FA693198B22190094B2F0 /* SQLDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8FA691198B22190094B2F0 /* SQLDetailViewController.xib */; };
+		CD8FA696198B24630094B2F0 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA695198B24630094B2F0 /* Database.m */; };
+		CD8FA698198B24930094B2F0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8FA697198B24930094B2F0 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,15 @@
 		CD8FA67C198B21DB0094B2F0 /* sqliteObjectDemo02Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "sqliteObjectDemo02Tests-Info.plist"; sourceTree = "<group>"; };
 		CD8FA67E198B21DB0094B2F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CD8FA680198B21DB0094B2F0 /* sqliteObjectDemo02Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sqliteObjectDemo02Tests.m; sourceTree = "<group>"; };
+		CD8FA68A198B22040094B2F0 /* SQLMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLMainViewController.h; sourceTree = "<group>"; };
+		CD8FA68B198B22040094B2F0 /* SQLMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLMainViewController.m; sourceTree = "<group>"; };
+		CD8FA68C198B22040094B2F0 /* SQLMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQLMainViewController.xib; sourceTree = "<group>"; };
+		CD8FA68F198B22190094B2F0 /* SQLDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLDetailViewController.h; sourceTree = "<group>"; };
+		CD8FA690198B22190094B2F0 /* SQLDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLDetailViewController.m; sourceTree = "<group>"; };
+		CD8FA691198B22190094B2F0 /* SQLDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQLDetailViewController.xib; sourceTree = "<group>"; };
+		CD8FA694198B24630094B2F0 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
+		CD8FA695198B24630094B2F0 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
+		CD8FA697198B24930094B2F0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD8FA698198B24930094B2F0 /* libsqlite3.dylib in Frameworks */,
 				CD8FA65E198B21DB0094B2F0 /* CoreGraphics.framework in Frameworks */,
 				CD8FA660198B21DB0094B2F0 /* UIKit.framework in Frameworks */,
 				CD8FA65C198B21DB0094B2F0 /* Foundation.framework in Frameworks */,
@@ -96,6 +112,7 @@
 		CD8FA65A198B21DB0094B2F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD8FA697198B24930094B2F0 /* libsqlite3.dylib */,
 				CD8FA65B198B21DB0094B2F0 /* Foundation.framework */,
 				CD8FA65D198B21DB0094B2F0 /* CoreGraphics.framework */,
 				CD8FA65F198B21DB0094B2F0 /* UIKit.framework */,
@@ -109,8 +126,16 @@
 			children = (
 				CD8FA66A198B21DB0094B2F0 /* SQLAppDelegate.h */,
 				CD8FA66B198B21DB0094B2F0 /* SQLAppDelegate.m */,
+				CD8FA68A198B22040094B2F0 /* SQLMainViewController.h */,
+				CD8FA68B198B22040094B2F0 /* SQLMainViewController.m */,
+				CD8FA68C198B22040094B2F0 /* SQLMainViewController.xib */,
+				CD8FA68F198B22190094B2F0 /* SQLDetailViewController.h */,
+				CD8FA690198B22190094B2F0 /* SQLDetailViewController.m */,
+				CD8FA691198B22190094B2F0 /* SQLDetailViewController.xib */,
 				CD8FA66D198B21DB0094B2F0 /* Images.xcassets */,
 				CD8FA662198B21DB0094B2F0 /* Supporting Files */,
+				CD8FA694198B24630094B2F0 /* Database.h */,
+				CD8FA695198B24630094B2F0 /* Database.m */,
 			);
 			path = sqliteObjectDemo02;
 			sourceTree = "<group>";
@@ -221,6 +246,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8FA666198B21DB0094B2F0 /* InfoPlist.strings in Resources */,
+				CD8FA68E198B22040094B2F0 /* SQLMainViewController.xib in Resources */,
+				CD8FA693198B22190094B2F0 /* SQLDetailViewController.xib in Resources */,
 				CD8FA66E198B21DB0094B2F0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,7 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8FA668198B21DB0094B2F0 /* main.m in Sources */,
+				CD8FA696198B24630094B2F0 /* Database.m in Sources */,
 				CD8FA66C198B21DB0094B2F0 /* SQLAppDelegate.m in Sources */,
+				CD8FA692198B22190094B2F0 /* SQLDetailViewController.m in Sources */,
+				CD8FA68D198B22040094B2F0 /* SQLMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
