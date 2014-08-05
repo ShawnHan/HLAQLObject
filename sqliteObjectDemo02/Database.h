@@ -21,4 +21,10 @@
 -(int)getDatabaseCount;
 
 -(void)deleteSQLiteData;
+
+-(int)getPassedTestNumber;
+
+-(double)averageTime;
+
+
 @end

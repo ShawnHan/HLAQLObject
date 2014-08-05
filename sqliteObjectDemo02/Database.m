@@ -195,6 +195,64 @@ static Database *_database;
     
     return count;
 }
+-(int)getPassedTestNumber
+{
+    int count = 0;
+    
+    if (sqlite3_open([self.databasePath UTF8String], &_database) == SQLITE_OK) {
+        NSLog(@"count sqlite ok");
+        //NSString *query = @"SELECT COUNT(*) FROM CONTACTS";
+        const char* sqlStmt = "SELECT COUNT(*) FROM TESTRESULT WHERE result = 'YES'";
+        sqlite3_stmt *statement;
+        if (sqlite3_prepare_v2(_database, sqlStmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            NSLog(@"sqlite prepare ok");
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                count = sqlite3_column_int(statement, 0);
+                NSLog(@"count == %i",count);
+                
+            }
+        }
+        else
+        {
+            NSLog(@"Failed from sqlite3_prepare_v2. Error is: %s", sqlite3_errmsg(_database));
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(_database);
+    }
+    
+    return count;
+}
+-(double)averageTime
+{
+    double time = 0;
+    if (sqlite3_open([self.databasePath UTF8String], &_database) == SQLITE_OK) {
+        NSLog(@"count sqlite ok");
+        //NSString *query = @"SELECT COUNT(*) FROM CONTACTS";
+        const char* sqlStmt = "SELECT AVG(totaltime) AS average FROM TESTRESULT";
+        sqlite3_stmt *statement;
+        if (sqlite3_prepare_v2(_database, sqlStmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            NSLog(@"sqlite prepare ok");
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                time = sqlite3_column_double(statement, 0);
+                NSLog(@"count == %f",time);
+                
+            }
+        }
+        else
+        {
+            NSLog(@"Failed from sqlite3_prepare_v2. Error is: %s", sqlite3_errmsg(_database));
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(_database);
+    }
+    
+    return time;
+}
+
+
+
 
 
 @end
